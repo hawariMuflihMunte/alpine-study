@@ -34,5 +34,26 @@
       >-</button>
     </article>
   </section>
+  <br>
+  <section>
+    <article x-data="{ open: false }">
+      <button
+        class="bg-red-800 py-3 px-6"
+        @click="open = !open"
+      >Toggle
+      </button>
+      <section
+        class="border-2 border-slate-300"
+        x-show="open"
+        @click.outside="open = false"
+      >
+        <p>
+          Merth uiraga bel ualallal uos halallal ezes,
+          wklelue olelothya therthetyk kynaal scouuo vylag fyom myth.
+          Epedek urodum iunhum nym mogomnok.
+        </p>
+      </section>
+    </article>
+  </section>
 </body>
 </html>
