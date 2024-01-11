@@ -15,5 +15,24 @@
     }"
     x-text="message"
   ></h1>
+  <section>
+    <article
+      class="flex"
+      x-data="{ count: 0 }"
+    >
+      <button
+        class="bg-green-800 text-slate-100 px-3 py-1"
+        x-on:click="count++"
+      >+</button>
+      <span
+      class="bg-red-700 flex items-center justify-center px-3"
+      x-text="count"
+      ></span>
+      <button
+        class="bg-yellow-600 text-slate-100 px-3 py-1"
+        x-on:click="count--"
+      >-</button>
+    </article>
+  </section>
 </body>
 </html>
