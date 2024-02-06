@@ -87,6 +87,17 @@
     >
       Add Post
     </button>
+
+    <!-- x-ref -->
+    <section class="my-6 bg-slate-600">
+      <section x-ref="text">Hello World</section>
+      <button
+        x-on:click="$refs.text.remove()"
+        class="bg-black text-white p-2 rounded"
+      >Click
+      </button>
+    </section>
+
   </section>
 </body>
 </html>
