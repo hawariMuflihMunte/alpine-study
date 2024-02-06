@@ -106,6 +106,22 @@
     <!-- el -->
     <button @click="$el.innerHTML = 'Hello $el'" class="mt-4 p-4 border">Replace Text</button>
 
+    <!-- x-init & watch -->
+    <section x-init="$watch('posts', value => console.log(value))"></section>
+
+    <!-- $dispatch -->
+    <section
+      @notify="alert('You have been notified!')"
+      class="my-5"
+    >
+      <button
+        @click="$dispatch('notify')"
+        class="bg-green-700 text-white p-2 rounded"
+      >
+        Notify
+      </button>
+    </section>
+
   </section>
 </body>
 </html>
