@@ -103,6 +103,9 @@
     <!-- x-html -->
     <section x-html="(await axios.get('./partial.html')).data"></section>
 
+    <!-- el -->
+    <button @click="$el.innerHTML = 'Hello $el'" class="mt-4 p-4 border">Replace Text</button>
+
   </section>
 </body>
 </html>
