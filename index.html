@@ -26,7 +26,8 @@
     <!-- x-on -->
     <button
       x-on:click="open = !open"
-      class="bg-slate-700 text-slate-100 px-4 py-2 rounded"
+      x-bind:class="open ? 'bg-slate-300 text-slate-700' : 'bg-slate-700'"
+      class="text-slate-100 px-4 py-2 rounded"
     >
       Toggle
     </button>
