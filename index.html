@@ -22,6 +22,12 @@
     open: false,
     name: 'Hawari Muflih Munte',
     search: '',
+    posts: [
+        {title: 'Post One'},
+        {title: 'Post Two'},
+        {title: 'Post Three'},
+        {title: 'Post Four'},
+    ]
   }">
 
     <!-- x-on -->
@@ -66,6 +72,21 @@
         Template based on a condition
       </section>
     </template>
+
+    <!-- x-for -->
+    <h3 class="text-2xl mt-6 mb-3 font-bold">Posts</h3>
+    <template x-for="post in posts">
+      <article
+        class="italic"
+        x-text="post.title"></article>
+    </template>
+
+    <button
+      @click="posts.push({ title: 'New Post' })"
+      class="bg-blue-800 text-slate-100 px-4 py-2 rounded mt-4"
+    >
+      Add Post
+    </button>
   </section>
 </body>
 </html>
