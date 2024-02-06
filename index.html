@@ -9,6 +9,8 @@
   <script defer src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
   <style>
     [x-cloak] {
       display: none;
@@ -97,6 +99,9 @@
       >Click
       </button>
     </section>
+
+    <!-- x-html -->
+    <section x-html="(await axios.get('./partial.html')).data"></section>
 
   </section>
 </body>
