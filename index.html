@@ -20,13 +20,14 @@
   <!-- x-data -->
   <section x-data="{
     open: false,
-    name: 'Hawari Muflih Munte'
+    name: 'Hawari Muflih Munte',
+    search: '',
   }">
 
     <!-- x-on -->
     <button
       x-on:click="open = !open"
-      x-bind:class="open ? 'bg-slate-300 text-slate-700' : 'bg-slate-700'"
+      :class="open ? 'bg-slate-300 text-slate-700' : 'bg-slate-700'"
       class="text-slate-100 px-4 py-2 rounded"
     >
       Toggle
@@ -46,6 +47,25 @@
 
     <!-- x-effect -->
     <section x-effect="console.log(open)"></section>
+
+    <!-- x-model -->
+    <input
+      type="text"
+      x-model="search"
+      class="border p-2 w-full mb-2 mt-6 text-slate-700"
+      placeholder="Search for something..."
+    />
+    <p class="w-full overflow-x-hidden">
+      <span class="font-bold">Searching for:</span>
+      <span x-text="search"></span>
+    </p>
+
+    <!-- x-if -->
+    <template x-if="open">
+      <section class="bg-gray-600 p-2 mt-8">
+        Template based on a condition
+      </section>
+    </template>
   </section>
 </body>
 </html>
