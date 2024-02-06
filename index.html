@@ -1,88 +1,47 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Hawari Muflih Munte</title>
+  <title>Alpine.js Study</title>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <style>
+    [x-cloak] {
+      display: none;
+    }
+  </style>
 </head>
-<body class="m-0 p-0 bg-slate-700 text-slate-100">
-  <main class="p-2">
-    <h1
-      class="text-3xl font-bold font-weight"
-      x-data="{
-        message: 'Hello Alpine & Tailwind'
-      }"
-      x-text="message"
-    ></h1>
-    <hr class="my-3">
-    <section class="mb-3">
-      <article
-        class="flex"
-        x-data="{ count: 0 }"
-      >
-        <button
-          class="bg-green-800 text-slate-100 px-3 py-1"
-          x-on:click="count++"
-        >+</button>
-        <span
-        class="bg-red-700 flex items-center justify-center px-3"
-        x-text="count"
-        ></span>
-        <button
-          class="bg-yellow-600 text-slate-100 px-3 py-1"
-          x-on:click="count--"
-        >-</button>
-      </article>
+<body class="m-0 p-0 bg-slate-800 text-slate-100">
+
+  <!-- x-data -->
+  <section x-data="{
+    open: false,
+    name: 'Hawari Muflih Munte'
+  }">
+
+    <!-- x-on -->
+    <button
+      x-on:click="open = !open"
+      class="bg-slate-700 text-slate-100 px-4 py-2 rounded"
+    >
+      Toggle
+    </button>
+
+    <!-- x-show -->
+    <section x-show="open" x-transition x-cloak>
+      <p class="bg-gray-600 p-4 my-6 rounded">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, voluptates. Ducimus, nemo! Odit doloremque blanditiis error eos recusandae! Explicabo, veritatis!
+      </p>
     </section>
-    <br>
-    <section class="mb-3">
-      <article x-data="{ open: false }">
-        <button
-          class="bg-red-800 py-3 px-6"
-          @click="open = !open"
-        >Toggle
-        </button>
-        <section
-          class="border-2 border-slate-300"
-          x-show="open"
-          @click.outside="open = false"
-        >
-          <p>
-            Merth uiraga bel ualallal uos halallal ezes,
-            wklelue olelothya therthetyk kynaal scouuo vylag fyom myth.
-            Epedek urodum iunhum nym mogomnok.
-          </p>
-        </section>
-      </article>
+
+    <!-- x-text -->
+    <section class="my-4">
+      The value of name is <span x-text="name" class="font-bold"></span>
     </section>
-    <section class="mb-3">
-      <article
-        x-data="{
-          search: '',
-          items: ['foo', 'bar', 'baz'],
-          get filteredItems() {
-            return this.items.filter(
-              i => i.startsWith(this.search)
-            )
-          }
-        }"
-      >
-        <input
-          class="bg-red-200 placeholder:text-gray-700 outline-none px-4 py-1 text-black w-full rounded-t-lg"
-          type="text"
-          x-model="search"
-          placeholder="Search . . ."
-        >
-        <ul class="bg-blue-900 px-4 py-6 rounded-b-lg">
-          <template x-for="item in filteredItems" :key="item">
-            <li x-text="item"></li>
-          </template>
-        </ul>
-      </article>
-    </section>
-  </main>
+  </section>
 </body>
 </html>
